@@ -42,9 +42,9 @@ cacheSolve <- function(mkCacheMtxObj, ...) {
         }
         # otherwise, calculate inverse anew by accessing passed object's 
         # curMatrix
-        data = mkCacheMtxObj$get()
+        data <-  mkCacheMtxObj$get()
         # create identity matrix of matching size to curMatrix
-        ident = diag(dim(data)[1])
+        ident  <-  diag(dim(data)[1])
         # call solve, passing curMatrix and commensurate identity matrix
         inv <- solve(data, ident, ...)
         # update curInv by using passed object to call mutator method setinv()  
